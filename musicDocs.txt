@@ -1,0 +1,183 @@
+========================= Album card =================
+
+      CustomWidget.albumCard(
+        context: context,
+        width: 50,
+        height: 30,
+        maxHeight: 400,
+        maxWidth: 300,
+        playBtnHeight: 70,
+        playBtnWidth: 70,
+        icon: const Icon(
+          Icons.play_arrow_outlined,
+          size: 40,
+          color: Color.fromARGB(255, 242, 242, 242),
+        ),
+        url: "https://studiosol-a.akamaihd.net/uploadfile/letras/fotos/5/e/8/b/5e8b3984d5574c741018353d90277759.jpg"
+      ),
+
+====================== Music List =========================
+CustomWidget().musicList(
+                  bgColor: Color.fromARGB(164, 25, 9, 9),
+                  txtColor: Color.fromARGB(255, 226, 226, 226),
+                  min: "03:23",
+                  playSize: 3,
+                  height: 2.3,
+                  titleSize: 1.2,
+                  artistSize: 1,
+                  title: "Dance Monkey shsggssgsgsg",
+                  artist: "Ola Emma",
+                  leadingIcon: const Icon(
+                    Icons.keyboard_double_arrow_up_rounded,
+                    color: Colors.green,
+                    size: 1.5
+                  ),
+                  url:
+                      "https://th.bing.com/th/id/R.af2575a2a68e7b67c6e16a36567ca37a?rik=pWb5EHooK3cOSQ&pid=ImgRaw&r=0",
+                  suffixIcon: const Icon(
+                    Icons.favorite_rounded,
+                    color: Color.fromARGB(255, 220, 73, 114),
+                    size: 1.5,
+                  ),
+                  leadingAction: () {
+                    setState(() {
+                      play = !play;
+                      count++;
+                      print("Hola");
+                    });
+                  },
+                  suffixAction: () {
+                    print("Hola");
+                  },
+                  count: count,
+                  context: context,
+                  play: play)
+
+
+
+
+
+
+
+
+============================= Cartegories ==================
+CustomWidget().cartegories(
+              url: "asset/img/avatar_g2.jpg",
+              category: "Romance",
+              action: (){
+                print("action clicked");
+              },
+              child: const Icon(
+                Icons.play_arrow_rounded,
+                size: 2.2,
+                color: Color.fromARGB(255, 220, 73, 114),
+              ),
+              context: context,
+              height: 8,
+              width: 8,
+              radius: 10
+            )
+
+
+============================ Trendings =========================
+ CustomWidget().trending(
+              height: 12,
+              width: 10,
+              title: "Rascal",
+              textSizes: [1, 0.8],
+              artist: "Ola Emma",
+              context: context,
+              category: CustomWidget().cartegories(
+              url: "asset/img/avatar_g2.jpg",
+                category: "Romance",
+                action: (){
+                  print("action clicked");
+                },
+                child: const Icon(
+                  Icons.play_arrow_rounded,
+                  size: 1.5,
+                  color: Color.fromARGB(255, 220, 73, 114),
+                ),
+                context: context,
+                height: 8,
+                width: 8,
+                radius: 10
+              ),
+            )
+
+
+
+
+========================== Music Player ===================================
+customWidget.musicPlayer(
+        forwardAction: () {
+          print("backward");
+        },
+        backwardAction: () {
+          print("backward");
+        },
+        playAction: () {
+          setState(() {
+            play = !play;
+          });
+        },
+        time: 0.9,
+        titleSize: 1.3,
+        artistSize: 1.1,
+        url:
+            "https://th.bing.com/th/id/R.af2575a2a68e7b67c6e16a36567ca37a?rik=pWb5EHooK3cOSQ&pid=ImgRaw&r=0",
+        color: Color.fromARGB(255, 220, 73, 114),
+        title: "Melo Melo",
+        artist: "Olamide",
+        min: "3:09",
+        play: play,
+        action: () {
+          action();
+        },
+        volume: 7.9,
+        download: () {
+          action();
+        },
+        context: context
+      )
+    )
+
+
+===================== player option ======================
+ customWidget.musicPlayerOpt(
+            repeatAction: () {
+              print("point");
+            },
+            context: context,
+            mute: false,
+            volumeAction: (value) {
+              setState(() {
+                volume = value;
+                print("volume = $volume");
+              });
+            },
+            volume: volume.toDouble(),
+            download: () {
+              print("downloading");
+              Future.delayed(Duration(seconds: 2));
+              print("downloaded");
+            },
+            likeAction: () {
+              print("Liked");
+            }),
+      ),
+
+      
+      InputDecoration(
+          label: Row(
+            children: [
+              Icon(CupertinoIcons.search, size: devSize*2,),
+              Text(
+                "Search",
+                style: TextStyle(
+                    fontSize: 3*devSize
+                  ),
+                ),
+            ],
+          )
+        ),
